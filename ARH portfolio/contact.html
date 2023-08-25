@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your architect</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <style>
+        /* Стили CSS */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav бургер-->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-row">
+                <a href="./index.html" class="logo">            
+                    <img src="./img/Vector_1.png" alt="Logotip" class="vector__1">
+                    <img src="./img/Vector.png" alt="Logotip" class="vector">
+                </a>
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="#" class="nav-list__link nav-list__link--active">MAIN</li>
+                    <li class="nav-list__item"><a href="#" class="nav-list__link">GALLERY</a></li>
+                    <li class="nav-list__item"><a href="#" class="nav-list__link">PROJECTS</a></li>
+                    <li class="nav-list__item"><a href="#" class="nav-list__link">CERTIFICATIONS</a></li>
+                    <li class="nav-list__item"><a href="#" class="nav-list__link">CONTACTS</a></li>
+                </ul>
+            </div>
+        </div> 
+    </nav>
+
+    <!-- Main -->
+    <div class="contact-info">
+        <h2>Контактная информация</h2>
+        <p>Телефон: 1234567890</p>
+        <p>Email: example@example.com</p>
+        <p>Адрес: г. Москва, ул. Примерная, 1</p>
+    </div>
+    <div id="map"></div>
+
+
+    
+    <!-- Footer  -->
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <ul class="social">
+                <li class="social__item"><a href="#!"><img src="./img/facebook.png" alt="="Link"></a></li>
+                <li class="social__item"><a href="#!"><img src="./img/twitter.png" alt="="Link"></a></li>
+                <li class="social__item"><a href="#!"><img src="./img/facebook.png" alt="="Link"></a></li>
+                <li class="social__item"><a href="#!"><img src="./img/twitter.png" alt="="Link"></a></li>
+            </ul> 
+            <div class="copyright">
+                <p> 2023 </p>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+
+    <!-- JS -->
+    <script>
+        // JavaScript
+        function initMap() {
+            // Создание объекта карты Google
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 55.7558, lng: 37.6176 }, // Координаты центра карты
+                zoom: 14 // Уровень приближения карты
+            });
+            
+            // Создание маркера на карте
+            var marker = new google.maps.Marker({
+                position: { lat: 55.7558, lng: 37.6176 }, // Координаты маркера
+                map: map // Карта, на которой будет отображаться маркер
+            });
+        }
+    </script>
+    
+    <!-- Подключение скрипта Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
